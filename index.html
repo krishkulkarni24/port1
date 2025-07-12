@@ -220,18 +220,25 @@
   </footer>
 
   <script>
-    function showSection(id) {
-      document.querySelectorAll("section").forEach(sec => {
-        sec.classList.remove("active");
-      });
-      document.getElementById(id).classList.add("active");
-    }
-
-    window.addEventListener('load', () => {
-      const hash = window.location.hash.replace("#", "") || "home";
-      showSection(hash);
+  function showSection(id) {
+    document.querySelectorAll("section").forEach(sec => {
+      sec.classList.remove("active");
     });
-  </script>
+    const target = document.getElementById(id);
+    if (target) {
+      target.classList.add("active");
+    }
+  }
+
+  function initNavigation() {
+    const hash = window.location.hash.replace("#", "") || "home";
+    showSection(hash);
+  }
+
+  window.addEventListener('DOMContentLoaded', initNavigation);
+  window.addEventListener('hashchange', initNavigation);
+</script>
+
 
 </body>
 </html>
