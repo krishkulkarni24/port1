@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Devansh's Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Roboto', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #f5f6fa, #e3e6f0);
+      color: #333;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav {
+      background: linear-gradient(45deg, #333, #555);
+      overflow: hidden;
+    }
+
+    nav a {
+      float: left;
+      display: block;
+      color: #fff;
+      text-align: center;
+      padding: 16px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #666;
+      color: #fff;
+    }
+
+    main {
+      flex: 1;
+      padding-bottom: 40px;
+    }
+
+    section {
+      display: none;
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: 20px auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      opacity: 0;
+      transition: opacity 0.6s ease-in;
+      background: #fff;
+    }
+
+    section.active {
+      display: block;
+      opacity: 1;
+    }
+
+    section:nth-of-type(even) {
+      background: #f0f0f0;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .about-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .about-text {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .about-photo {
+      flex: 1;
+      text-align: center;
+      min-width: 200px;
+    }
+
+    .about-photo img {
+      width: 80%;
+      max-width: 300px;
+      border-radius: 12px;
+      border: 3px solid #333;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .project-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      margin-bottom: 40px;
+    }
+
+    .project-description {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .project-media {
+      flex: 1;
+      min-width: 250px;
+      text-align: center;
+    }
+
+    .project-media img {
+      width: 80%;
+      max-width: 300px;
+      border-radius: 10px;
+      border: 2px solid #222;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #333;
+      color: #fff;
+      font-size: 0.9em;
+    }
+
+    a.button {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #333;
+      color: #fff;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    a.button:hover {
+      background: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#home" onclick="showSection('home')">Home</a>
+    <a href="#about" onclick="showSection('about')">About Me</a>
+    <a href="#skills" onclick="showSection('skills')">Skills</a>
+    <a href="#projects" onclick="showSection('projects')">Projects</a>
+    <a href="#resume" onclick="showSection('resume')">Resume</a>
+    <a href="#contact" onclick="showSection('contact')">Contact</a>
+  </nav>
+
+  <main>
+    <section id="home" class="active">
+      <h1>Welcome to My Portfolio!</h1>
+      <p>Welcome to my portfolio—a curated collection of projects, skills, and experiences...</p>
+    </section>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="about-container">
+        <div class="about-text">
+          <h3>Devansh V S Purihella</h3>
+          <p>Email: <a href="mailto:devansh.pvs@gmail.com">devansh.pvs@gmail.com</a></p>
+          <p>LinkedIn: <a href="https://www.linkedin.com/in/devanshvspurihella" target="_blank">linkedin.com/in/devanshvspurihella</a></p>
+          <p>Instagram: <a href="https://www.instagram.com/violindeva093" target="_blank">instagram.com/violindeva093</a></p>
+          <p>I am an ambitious B.Tech Artificial Intelligence student...</p>
+        </div>
+        <div class="about-photo">
+          <img src="dev2.jpg" alt="Devansh performing violin solo">
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li><strong>C Programming:</strong> ...</li>
+        <li><strong>Python Programming:</strong> ...</li>
+        <li><strong>Machine Learning:</strong> ...</li>
+        <li><strong>Web Development:</strong> ...</li>
+        <li><strong>Data Analysis:</strong> ...</li>
+        <li><strong>Violin Performance:</strong> ...</li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project-container">
+        <div class="project-description">
+          <h3>VirtuoNet – AI-Powered Music Platform</h3>
+          <p>VirtuoNet is an intelligent platform that blends music education, real-time AI feedback, and social networking...</p>
+        </div>
+        <div class="project-media">
+          <img src="dev1.jpg" alt="VirtuoNet Logo">
+        </div>
+      </div>
+    </section>
+
+    <section id="resume">
+      <h2>Resume</h2>
+      <p><a href="resume.pdf" class="button" target="_blank">Download My Resume (PDF)</a></p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: devansh.pvs@gmail.com<br>Phone: +91-7093590028<br>LinkedIn: linkedin.com/in/devanshvspurihella<br>Instagram: instagram.com/violindeva093</p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; Devansh 23EG106A12
+  </footer>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll("section").forEach(sec => {
+        sec.classList.remove("active");
+      });
+      document.getElementById(id).classList.add("active");
+    }
+
+    window.addEventListener('load', () => {
+      const hash = window.location.hash.replace("#", "") || "home";
+      showSection(hash);
+    });
+  </script>
+
+</body>
+</html>
